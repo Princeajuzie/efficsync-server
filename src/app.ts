@@ -5,9 +5,10 @@ import cors from "cors";
 
 const app: Express = express();
 
+const Origins = ["http://localhost:3001", "http://localhost:3000"]
 app.use(express.json());
 app.use("/client/api/auth", AuthRouter);
-app.use(cors({ origin: "http://localhost:3000" , credentials: true}));
+app.use(cors({ origin: Origins , credentials: true}));
 
 // app.get("/", (req: Request, res: Response) => {
 //   res.send({ htm: "Hello" });
